@@ -1,0 +1,112 @@
+<head>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+  <h1>Dice</h1>
+  <section class="container">
+    <div id="cube">
+      <div class="front">
+        <span class="dot dot1"></span>
+      </div>
+      <div class="back">
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>
+      </div>
+      <div class="right">
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>  
+        <span class="dot dot3"></span>
+      </div>
+      <div class="left">
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>  
+        <span class="dot dot3"></span>
+        <span class="dot dot4"></span>
+      </div>
+      <div class="top">
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>  
+        <span class="dot dot3"></span>
+        <span class="dot dot4"></span>
+        <span class="dot dot5"></span>
+      </div>
+      <div class="bottom">
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>  
+        <span class="dot dot3"></span>
+        <span class="dot dot4"></span>
+        <span class="dot dot5"></span>
+        <span class="dot dot6"></span>
+      </div>
+    </div>
+  </section>
+
+<section class="firstrecord">
+<div>
+  <h4>First: </h4><p id="first">0</p><button onclick="firstUP()">UP</button><button onclick="firstDOWN()">DOWN</button>
+</div>
+</section>
+
+<section class="secondrecord">
+<div>
+  <h4>Second: </h4><p id="second">0</p><button onclick="secondUP()">UP</button><button onclick="secondDOWN()">DOWN</button>
+</div>
+</section>
+
+<section class="timer"></section>
+<div id="app"></div>
+<select id="sel1" onChange="seconds(this);">
+  <option value="0">Please select an option:</option>
+  <option value="15">15 seconds</option>
+  <option value="30">30 seconds</option>
+  <option value="45">45 seconds</option>
+</select>
+<button onclick="startTimer()">Start</button>
+</section>
+
+<!-- <audio id="myAudio">
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> -->
+
+<div id="my-lucky"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/lucky-canvas@1.7.11"></script>
+<script>
+  const myLucky = new LuckyCanvas.LuckyWheel('#my-lucky', {
+    width: '600px',
+    height: '600px',
+    blocks: [{ padding: '30px', background: '#869cfa' }],
+    prizes: [
+      { background: '#e9e8fe', fonts: [{ text: '0', fontSize:'28px',top:'15px' }] },
+      { background: '#b8c5f2', fonts: [{ text: '1', fontSize:'28px',top:'15px' }] },
+      { background: '#e9e8fe', fonts: [{ text: '2', fontSize:'28px',top:'15px' }] },
+      { background: '#b8c5f2', fonts: [{ text: '3', fontSize:'28px',top:'15px' }] },      
+      { background: '#e9e8fe', fonts: [{ text: '4', fontSize:'28px',top:'15px' }] },
+      { background: '#b8c5f2', fonts: [{ text: '5', fontSize:'28px',top:'15px' }] },      
+      { background: '#e9e8fe', fonts: [{ text: '6', fontSize:'28px',top:'15px' }] },
+      { background: '#b8c5f2', fonts: [{ text: '7', fontSize:'28px',top:'15px' }] },
+      { background: '#e9e8fe', fonts: [{ text: '8', fontSize:'28px',top:'15px' }] },
+      { background: '#b8c5f2', fonts: [{ text: '9', fontSize:'28px',top:'15px' }] }
+    ],
+    buttons: [
+      { radius: '40%', background: '#617df2' },
+      { radius: '35%', background: '#afc8ff' },
+      {
+        radius: '30%', background: '#869cfa',
+        pointer: true,
+        fonts: [{ text: 'Start', top: '-17px',fontSize:'35px' }]
+      },
+    ],
+    start: function() {
+      myLucky.play()
+      result = parseInt(Math.random()*10)
+      setTimeout(_ => {
+        myLucky.stop(result)
+      }, 1000)
+    },
+  })
+</script>
+
+<script type="text/javascript" src="script.js"></script>
