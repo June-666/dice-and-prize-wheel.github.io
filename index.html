@@ -43,17 +43,21 @@
 
 <section class="firstrecord">
 <div>
-  <h4>First: </h4><p id="first">0</p><button onclick="firstUP()">UP</button><button onclick="firstDOWN()">DOWN</button>
+  <h4>First: </h4><p id="first">0</p><button onclick="firstUP()" class="button">UP</button>
+  <p></p>
+  <button onclick="firstDOWN()" class="button">DOWN</button>
 </div>
 </section>
 
 <section class="secondrecord">
 <div>
-  <h4>Second: </h4><p id="second">0</p><button onclick="secondUP()">UP</button><button onclick="secondDOWN()">DOWN</button>
+  <h4>Second: </h4><p id="second">0</p><button onclick="secondUP()" class="button">UP</button>
+  <p></p>
+  <button onclick="secondDOWN()" class="button">DOWN</button>
 </div>
 </section>
 
-<section class="timer"></section>
+<section class="timer">
 <div id="app"></div>
 <select id="sel1" onChange="seconds(this);">
   <option value="0">Please select an option:</option>
@@ -61,16 +65,12 @@
   <option value="30">30 seconds</option>
   <option value="45">45 seconds</option>
 </select>
-<button onclick="startTimer()">Start</button>
+<button onclick="startTimer()" class="button">Start</button>
 </section>
 
-<!-- <audio id="myAudio">
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio> -->
-
+<section class="lucky">
 <div id="my-lucky"></div>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/lucky-canvas@1.7.11"></script>
 <script>
